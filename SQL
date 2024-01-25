@@ -152,11 +152,23 @@ Create Table  allbooks (
   select * from bookTypeName
          
 		 /*NOTLAR
-		   PRIMARY KEY: Değer olarak NULL içermez ve her tabloda bir tane bulunur.
-		   UNIQUE KEY: Değer olarak NULL içerebilir ve bir değeri birden fazla almaz.
-		   FOREIGN KEY: Bir veri tablosuna girilebilecek değerleri başka bir veri tablosundaki alanlarla ilişkilendirmeye yarar.
-           IDENTITY: Tabloları oluştururken Primary Key olarak belirlediğimiz kolonu her veri eklendiğinde sıralı bir şekilde ID verisini almasını sağlıyor.
+		   PRIMARY KEY: Değer olarak NULL içermez ve her tabloda bir tane bulunur. Primary Key bir tabloda var olan bir veriye 
+                    sadece o veriye ait bir değer atar. Örneğin burada oluşturduğumuz writers tablosunda her yazara ayrı bir ID verilir.
+                    Çünkü o yazardan birtane vardır ve tabloda ona verdiğin Primary Key olan ID sayesinde o kişiyi kolaylıkla tanımlayabilmeni sağlar. 
+
+		   UNIQUE KEY: Değer olarak NULL içerebilir ve bir değeri birden fazla kez alamaz. Örnek olarak T.C. kimlik numarası kişiye aittir ve kişiye özeldir.
+                    Bu yüzden T.C. kimlik numarası UNIQUE yapılmalıdır. Primary Key'den farkı NULL karakter içerbiliyor oluşudur.
+
+                   FOREIGN KEY: Bir veri tablosuna girilebilecek değerleri başka bir veri tablosundaki alanlarla ilişkilendirmeye yarar.
+                    DATABASE tasarlarken tablolar parçalara ayrılarak veri tekrarının önüne geçilir.
+                    Ayırdığımız tabloları anlamlı bir şekilde birleştirmek için ortak bir sütun belirlenir(Bu DATABASE'de bu sütun ID'dir.).
+                    Bu sütunun sayesinde tablolar arası Foreign key ile ilişki kurularak veri bütünlüğü korunur. 
+                    Yani Foreign Key kullanım amacı veri bütünlüğünün sağlanmasıdır.
+
+                   IDENTITY: Tabloları oluştururken Primary Key olarak belirlediğimiz kolonu her veri eklendiğinde sıralı bir şekilde artırarak 
+                     ID verisini otomatik olarak almasını sağlıyor.
+
 		   SET identity_insert dbo.stock OFF/ON  kod satırı IDENTITY olarak belirlediğimiz kolon için IDENTITY'i pasif ve aktif etmemizi sağlar.
-            ON konumuna getirirsek veri eklerken ID değerini kendimiz girebiliriz, OFF durumdayken ise MS-SQL bunu yapmamıza izin vermez.*/
+                     ON konumuna getirirsek veri eklerken ID değerini kendimiz girebiliriz, OFF durumdayken ise MS-SQL bunu yapmamıza izin vermez.*/
 	
 	
