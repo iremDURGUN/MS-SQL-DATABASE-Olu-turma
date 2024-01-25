@@ -1,4 +1,7 @@
-# MS-SQL-DATABASE-Olusturma
+# MS-SQL-DATABASE-Olusturma 
+
+### Kod Satırlarının Altında Bulunan Notlar Kısmını Okumayı Unutmayınız
+
 SQL'de Database oluşturarak çalışma alanı hazırlama.
 SQL'de bir database olusturup sonrasinda normalizasyon kurallarina dikkat ederek gerekli tablolar belirlenmelidir.
 İhtiyac duyulan tablolari belirledikten sonra sirasiyla tablolari olusturulur.
