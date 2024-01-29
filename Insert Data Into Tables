@@ -102,7 +102,8 @@
    (9786052980868,'1984','George Orwell','Can Yayınları',352,'1938-03-05','Bilim Kurgu','İngilizce',6,10,15,1,2)
   
          
-		 /*NOTLAR
+		
+             /*NOTLAR
 		        
 		           SET identity_insert dbo.stock OFF/ON  kod satırı IDENTITY olarak belirlediğimiz kolon için IDENTITY'i pasif ve aktif etmemizi sağlar.
                      ON konumuna getirirsek veri eklerken ID değerini kendimiz girebiliriz, OFF durumdayken ise MS-SQL bunu yapmamıza izin vermez.
@@ -111,4 +112,4 @@
 					          Kullanımı: INSERT INTO table_name (column_name) VALUES (calumn_value )
 					          Belirtilen sütun adları ve girelen değer bilgileri doğru sıralama da ve adette olmalıdır.
 
-*/
+               */
