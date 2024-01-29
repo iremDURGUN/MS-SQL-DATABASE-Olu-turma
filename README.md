@@ -1,4 +1,4 @@
-# MS-SQL-DATABASE-Olusturma 
+# MSSQL WORKSHEET 
 
 ### Kod Satırlarının Altında Bulunan Notlar Kısmını Okumayı Unutmayınız
 
