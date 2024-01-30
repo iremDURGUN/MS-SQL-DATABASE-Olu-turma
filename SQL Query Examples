@@ -127,8 +127,8 @@
 	SELECT* FROM allbooks WHERE isbnID NOT LIKE '___[9]%'
 
 
-  /* allbooks tablosunda bookName sütunun'da a,e,i,o,u harflerinin kitap isimlerinin hem başında hem de sonunda olmayan kitap isimlerini sorgular.*/
-	SELECT DISTINCT(bookName) FROM allbooks WHERE bookName NOT LIKE '[aeiou]%[aeiou]'
+    /* allbooks tablosunda bookName sütunun'da tekrar etmeyen verilerde a,e,i,o,u harflerinin kitap isimlerinin hem başında hem de sonunda olmayan kitap isimlerini sorgular. */
+	SELECT DISTINCT(bookName) FROM allbooks WHERE bookName NOT LIKE '[aeiom]%' AND bookName NOT LIKE '%[aeiom]'
 
 	/*Notlar:  
 
@@ -203,6 +203,9 @@
    EXECUTE : Ececute yardımıyla oluşturduğumuz Procedure' u çalıştırırız.
 
    MOD (%) : % işareti matematiksel ifade olarak bir sayının modunu almamıza yardımcı olur.
+
+   AND-OR  : Where koşulunu kullanırken birden fazla koşul belirtmek için AND,OR yapıları kullanılır. AND kullanıldığında belirtilen koşulların tamamının sağlanması beklenir
+         OR kullanıldığında koşullardan birinin sağlanması yeterlidir. Mantık ifadeleri mantığıyla işlem yapar.
 
 			  */
 	
