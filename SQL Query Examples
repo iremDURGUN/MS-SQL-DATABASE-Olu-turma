@@ -114,13 +114,13 @@
 	/*allbooks tablosunda alfabetik olarak kitap adı en kısa olan kitabı sorgular */
 	SELECT TOP 1 bookName,LEN(bookName) AS Uzunluk FROM allbooks 
 	WHERE LEN(bookName) = (SELECT TOP 1 MIN(LEN(bookName)) AS Uzunluk FROM allbooks) 
-  GROUP BY bookName ORDER BY bookName ASC
+        GROUP BY bookName ORDER BY bookName ASC
 
 
 	/*allbooks tablosunda alfabetik olarak kitap adı en uzun olan kitabı sorgular */
     SELECT TOP 1 bookName,LEN(bookName) AS Uzunluk FROM allbooks 
   	WHERE LEN(bookName)=(SELECT TOP 1 MAX(LEN(bookName)) AS Uzunluk FROM allbooks) 
-    GROUP BY bookName ORDER BY bookName ASC
+        GROUP BY bookName ORDER BY bookName ASC
 
 
 	/*allBooks tablosunda isbnID 'de 4. karakteri 9 olmayan satırları döndüren sorgudur.*/
@@ -129,6 +129,13 @@
 
     /* allbooks tablosunda bookName sütunun'da tekrar etmeyen verilerde a,e,i,o,u harflerinin kitap isimlerinin hem başında hem de sonunda olmayan kitap isimlerini sorgular. */
 	SELECT DISTINCT(bookName) FROM allbooks WHERE bookName NOT LIKE '[aeiom]%' AND bookName NOT LIKE '%[aeiom]'
+
+   /*allbooks tablosunda her katagoride kaçar adet kitap olduğunu küçükten büyüğe sıralar. Bunu yaparken katagori adlarını alfabetik olarakta sıralar. 
+	  Eğer alfabetik sıralamada aynı harfle başlayan katagoriler varsa bunları kendi içinde adet sayısına göre küçükten büyüğe sıralar. */
+	SELECT CONCAT(bookTypeName,' ','katagorisinde',' ',COUNT(*), ' ','adet kitap vardır.') AS Katagori_Adetleri
+        FROM allbooks
+        GROUP BY bookTypeName
+        ORDER BY  Katagori_Adetleri , bookTypeName ASC;
 
 	/*Notlar:  
 
@@ -206,6 +213,8 @@
 
    AND-OR  : Where koşulunu kullanırken birden fazla koşul belirtmek için AND,OR yapıları kullanılır. AND kullanıldığında belirtilen koşulların tamamının sağlanması beklenir
          OR kullanıldığında koşullardan birinin sağlanması yeterlidir. Mantık ifadeleri mantığıyla işlem yapar.
+
+   CONCAT : Bir veya daha fazla dizeyi-kolonu birleştirerek yeni bir dize oluşturmak için kullanılır.
 
 			  */
 	
