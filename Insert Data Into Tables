@@ -17,7 +17,9 @@
    ('HaperOne'),
    ('Signet Classic'),
    ('Scribner'),
-   ('Pegasus Yayınları')
+   ('Pegasus Yayınları'),
+   ('İdea Yayınevi')
+
 
 
   /*writers tablosuna veri girişi*/
@@ -42,7 +44,9 @@
    ('Lev Tolstoy'),
    ('Ahmet Ümit'),
    ('James Dashner'),
-   ('J.R.R. Tolkien')
+   ('J.R.R. Tolkien'),
+   ('Martin Heidegger'),
+   ('Jean-Paul Sartre')
    
    /*bookTypeName tablosuna veri girişi*/
 
@@ -99,7 +103,9 @@
    (9786052345234,'Yüzüklerin Efendisi','J.R.R. Tolkien','Metis Yayınları',1216,'2018-08-05','Fantastik','İngilizce',7,4,19,8,1),
    (9789756456345,'Matematik Tarihi','Carl B. Boyer','Tübitak Yayınları',720,'2019-02-09','Tarih','İngilizce',2,8,11,7,2),
    (9789750345775,'Kar Kokusu','Ahmet Ümit','Yapı Kredi Yayınları',288,'2000-03-05','Polisiye','Türkçe',4,11,17,2,1),
-   (9786052980868,'1984','George Orwell','Can Yayınları',352,'1938-03-05','Bilim Kurgu','İngilizce',6,10,15,1,2)
+   (9786052980868,'1984','George Orwell','Can Yayınları',352,'1938-03-05','Bilim Kurgu','İngilizce',6,10,15,1,2),
+   (9789755334356 ,'Varlık ve Zaman ','Martin Heidegger','İdea Yayınevi',480,'2018-06-26','Felsefe','Türkçe',2,12,20,15,2),
+   (9789755334363  ,'Varlık ve Hiçlik ','Jean-Paul Sartre','İdea Yayınevi',320,'2018-05-17','Felsefe','Türkçe',7,12,21,15,1)
   
          
 		
