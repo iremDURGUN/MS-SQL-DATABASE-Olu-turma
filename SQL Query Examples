@@ -1,8 +1,10 @@
 
 /*Bu sorgu sayesinde kitap adı K harfiyle başlayan kitapların hangi yazara ait olduğunu sorgularız*/ 
-	SELECT w.writerName,a.bookName FROM writers AS w 
-	INNER JOIN allbooks AS a on w.ID=a.writerID
-	WHERE a.bookName LIKE 'K%'
+	{
+        "SELECT w.writerName,a.bookName FROM writers AS w \n",
+	"INNER JOIN allbooks AS a on w.ID=a.writerID \n",
+	"WHERE a.bookName LIKE 'K%' \n",
+        },
 
 	/* Bu sorgu sayesinde 2018 tarihinden sonra basılan kitapların basım tarihlerini ve stok tipilerini görürüz.*/
 	SELECT a.addedDate,s.stockTypeName FROM allbooks AS a
