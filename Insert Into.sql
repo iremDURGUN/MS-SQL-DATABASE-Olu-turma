@@ -1,4 +1,7 @@
- /*INSERT INTO fonksiyonunu kullanarak oluşturduğumuz tablolara veri giriyoruz.*/
+/*use ile çalışacağımız database 'i belirtiriz.*/
+use LibProject 
+
+/*INSERT INTO fonksiyonunu kullanarak oluşturduğumuz tablolara veri giriyoruz.*/
 
  /*publisher tablosuna veri girişi*/
 
