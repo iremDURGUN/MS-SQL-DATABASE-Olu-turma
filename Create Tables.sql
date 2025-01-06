@@ -1,8 +1,8 @@
 
-/*use ile çalışacağımız database 'i belirtiriz.*/
+/*use ile Ã§alÄ±ÅŸacaÄŸÄ±mÄ±z database 'i belirtiriz.*/
 use LibProject 
 
-/*Tabloları oluşturmak için aşağıdaki gibi CREATE TABLE fonksiyonunu kullanırız */
+/*TablolarÄ± oluÅŸturmak iÃ§in aÅŸaÄŸÄ±daki gibi CREATE TABLE fonksiyonunu kullanÄ±rÄ±z */
 
 
 Create Table bookTypeName (
@@ -37,7 +37,7 @@ Create Table writers (
 
 Create Table  allbooks ( 
   ID INT NOT NULL PRIMARY KEY IDENTITY(1,1),
-  isbnID NVARCHAR(13) NOT NULL UNIQUE,      /*ISBN numaraları kitap 'a özel bir numara olduğu için UNIQUE olarak tanımlarız.*/
+  isbnID NVARCHAR(13) NOT NULL UNIQUE,      /*ISBN numaralarÄ± kitap 'a Ã¶zel bir numara olduÄŸu iÃ§in UNIQUE olarak tanÄ±mlarÄ±z.*/
   bookName VARCHAR(30) NOT NULL,
   writerName VARCHAR(30) NOT NULL,
   publisherName VARCHAR(30) NOT NULL,
@@ -51,7 +51,7 @@ Create Table  allbooks (
   publisherID INT,
   stockTypeID INT,
   
-  FOREIGN KEY (bookTypeID ) REFERENCES bookTypeName (ID),          /*FOREIGN KEY yardımıyla tabloları ilişkilendiririz.*/
+  FOREIGN KEY (bookTypeID ) REFERENCES bookTypeName (ID),          /*FOREIGN KEY yardÄ±mÄ±yla tablolarÄ± iliÅŸkilendiririz.*/
   FOREIGN KEY (writerID ) REFERENCES writers (ID),
   FOREIGN KEY (publisherID ) REFERENCES publisher (ID),
   FOREIGN KEY (stockTypeID ) REFERENCES stockType (ID)
@@ -60,21 +60,21 @@ Create Table  allbooks (
 
 
 		 /*NOTLAR
-		   PRIMARY KEY: Değer olarak NULL içermez ve her tabloda bir tane bulunur. Primary Key bir tabloda var olan bir veriye 
-                    sadece o veriye ait bir değer atar. Örneğin burada oluşturduğumuz writers tablosunda her yazara ayrı bir ID verilir.
-                    Çünkü o yazardan birtane vardır ve tabloda ona verdiğin Primary Key olan ID sayesinde o kişiyi kolaylıkla tanımlayabilmeni sağlar. 
+		   PRIMARY KEY: DeÄŸer olarak NULL iÃ§ermez ve her tabloda bir tane bulunur. Primary Key bir tabloda var olan bir veriye 
+                    sadece o veriye ait bir deÄŸer atar. Ã–rneÄŸin burada oluÅŸturduÄŸumuz writers tablosunda her yazara ayrÄ± bir ID verilir.
+                    Ã‡Ã¼nkÃ¼ o yazardan birtane vardÄ±r ve tabloda ona verdiÄŸin Primary Key olan ID sayesinde o kiÅŸiyi kolaylÄ±kla tanÄ±mlayabilmeni saÄŸlar. 
 
-		   UNIQUE KEY: Değer olarak NULL içerebilir ve bir değeri birden fazla kez alamaz. Örnek olarak T.C. kimlik numarası kişiye aittir ve kişiye özeldir.
-                    Bu yüzden T.C. kimlik numarası UNIQUE yapılmalıdır. Primary Key'den farkı NULL karakter içerbiliyor oluşudur.
+		   UNIQUE KEY: DeÄŸer olarak NULL iÃ§erebilir ve bir deÄŸeri birden fazla kez alamaz. Ã–rnek olarak T.C. kimlik numarasÄ± kiÅŸiye aittir ve kiÅŸiye Ã¶zeldir.
+                    Bu yÃ¼zden T.C. kimlik numarasÄ± UNIQUE yapÄ±lmalÄ±dÄ±r. Primary Key'den farkÄ± NULL karakter iÃ§erbiliyor oluÅŸudur.
 
-                   FOREIGN KEY: Bir veri tablosuna girilebilecek değerleri başka bir veri tablosundaki alanlarla ilişkilendirmeye yarar.
-                    DATABASE tasarlarken tablolar parçalara ayrılarak veri tekrarının önüne geçilir.
-                    Ayırdığımız tabloları anlamlı bir şekilde birleştirmek için ortak bir sütun belirlenir(Bu DATABASE'de bu sütun ID'dir.).
-                    Bu sütunun sayesinde tablolar arası Foreign key ile ilişki kurularak veri bütünlüğü korunur. 
-                    Yani Foreign Key kullanım amacı veri bütünlüğünün sağlanmasıdır.
+                   FOREIGN KEY: Bir veri tablosuna girilebilecek deÄŸerleri baÅŸka bir veri tablosundaki alanlarla iliÅŸkilendirmeye yarar.
+                    DATABASE tasarlarken tablolar parÃ§alara ayrÄ±larak veri tekrarÄ±nÄ±n Ã¶nÃ¼ne geÃ§ilir.
+                    AyÄ±rdÄ±ÄŸÄ±mÄ±z tablolarÄ± anlamlÄ± bir ÅŸekilde birleÅŸtirmek iÃ§in ortak bir sÃ¼tun belirlenir(Bu DATABASE'de bu sÃ¼tun ID'dir.).
+                    Bu sÃ¼tunun sayesinde tablolar arasÄ± Foreign key ile iliÅŸki kurularak veri bÃ¼tÃ¼nlÃ¼ÄŸÃ¼ korunur. 
+                    Yani Foreign Key kullanÄ±m amacÄ± veri bÃ¼tÃ¼nlÃ¼ÄŸÃ¼nÃ¼n saÄŸlanmasÄ±dÄ±r.
 
-                   IDENTITY: Tabloları oluştururken Primary Key olarak belirlediğimiz kolonu her veri eklendiğinde sıralı bir şekilde artırarak 
-                     ID verisini otomatik olarak almasını sağlıyor.
+                   IDENTITY: TablolarÄ± oluÅŸtururken Primary Key olarak belirlediÄŸimiz kolonu her veri eklendiÄŸinde sÄ±ralÄ± bir ÅŸekilde artÄ±rarak 
+                     ID verisini otomatik olarak almasÄ±nÄ± saÄŸlÄ±yor.
 
 		  */
 	
